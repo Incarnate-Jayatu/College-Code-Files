@@ -67,7 +67,7 @@ public:
     }   
 };
 int main() {
-    int ugC, pgC;
+    int ugC;
     cout << "Enter number of UG students: ";
     cin >> ugC;
     UG ugBatch[ugC]; 
