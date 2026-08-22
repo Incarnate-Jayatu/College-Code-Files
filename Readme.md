@@ -2,7 +2,7 @@
 
 A structured repository containing my **B.Tech Computer Science Engineering** laboratory programs, practicals, and assignments completed throughout my degree.
 
-> Organized semester-wise for easy navigation and long-term academic reference.
+> Organized year-wise for easy navigation and long-term academic reference.
 
 ---
 
