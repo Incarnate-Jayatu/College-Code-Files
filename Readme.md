@@ -16,7 +16,7 @@ A structured repository containing my **B.Tech Computer Science Engineering** la
 ### Second Year
 
 - Java Programming Lab
-- Advanced C++ Lab
+- Advanced C++ Lab (DSA)
 
 > More subjects will be added as the course progresses.
 
