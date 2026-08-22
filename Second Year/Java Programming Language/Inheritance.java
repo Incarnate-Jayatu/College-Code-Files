@@ -18,7 +18,7 @@ void education()
 }
 	
 
-class Main
+class Inheritance
 {
 	public static void main(String []args)
 	{
