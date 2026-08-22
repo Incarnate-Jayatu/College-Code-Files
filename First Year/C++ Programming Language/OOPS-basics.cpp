@@ -1,31 +1,36 @@
+//Basic student management system
 #include<iostream>
+#include<string>
 using namespace std;
-class student
+class Student
 {
 	public:
 		int rollno;
-		string name;
-		getdata();
-		display();
+		string name, branch, year;
+		void getdata()
+		{
+			cout<<"Enter Name: ";
+			cin>>name;
+			cout<<"Enter Roll Number: ";
+			cin>>rollno;
+			cout<<"Enter Branch: ";
+			cin>>branch;
+			cout<<"Enter year: ";
+			cin>>year;
+		}
+		void showdata()
+		{
+			cout<<"Name of Student: "<<name<<endl;
+			cout<<"Roll Number: "<<rollno<<endl;
+			cout<<"Branch: "<<branch<<endl;
+			cout<<"Year: "<<year<<endl;
+		}
 };
-student::getdata()
-{
-	cout<<"Enter name: ";
-	cin>>name;
-	cout<<"\nEnter Roll No: ";
-	cin>>rollno;
-}
-student::display()
-{
-	cout<<"\n"<<name;
-	cout<<"\n"<<rollno;
-}
-
 int main()
 {
-	student s;
+	Student s;
 	s.getdata();
-	s.display();
+	cout<<"------Student Details-----"<<endl;
+	s.showdata();
 	return 0;
 }
- 
