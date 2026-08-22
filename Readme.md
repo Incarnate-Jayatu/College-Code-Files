@@ -27,13 +27,13 @@ A structured repository containing my **B.Tech Computer Science Engineering** la
 ```text
 College-Lab-Work/
 │
-├── Year-1/
-│   ├── C/
-│   └── C++/
+├── First Year/
+│   ├── C Programming Language/
+│   └── C++ Programming Language/
 │
 ├── Year-2/
-│   ├── Java/
-│   └── C++/
+│   ├── Java Programming Language/
+│   └── C++(DSA)/
 │
 └── README.md
 ```
@@ -59,5 +59,5 @@ College-Lab-Work/
 
 ## 👨‍💻 Author
 
-**Jayatu**  
+**Jayatu Bhattad**  
 B.Tech Computer Science Engineering
