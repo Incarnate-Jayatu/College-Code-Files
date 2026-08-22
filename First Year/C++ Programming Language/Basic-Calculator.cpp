@@ -1,68 +1,79 @@
+//Calculator
 #include<iostream>
 using namespace std;
-class maths
+class data
 {
 	public:
-		float n1, n2;
-		getdata();
-		add();
-		sub();
-		mul();
-		div();
+		double num1, num2;
+		void getdata()
+		{
+			cout<<"Enter number 1: ";
+			cin>>num1;
+			cout<<"Enter number 2: ";
+			cin>>num2;
+		}
+		void add();
+		void subtract();
+		void divide();
+		void multiply();
 };
-maths::getdata()
+void data::add()
 {
-	cout<<"\nEnter first number: ";
-	cin>>n1;
-	cout<<"Enter second number: ";
-	cin>>n2;
+	cout<<"Result of Addition of the two numbers is "<<num1+num2<<endl;
 }
-maths::add()
+void data::subtract()
 {
-	cout<<"\nSum of given two numbers is: "<<n1+n2<<endl;
+	cout<<"Result of Subtraction of the two numbers is "<<num1-num2<<endl;
 }
-maths::sub()
+void data::multiply()
 {
-	cout<<"Difference of given two numbers is: "<<n1-n2<<endl;
+	cout<<"Result of Product of the two numbers is "<<num1*num2<<endl;
 }
-maths::mul()
+void data::divide()
 {
-	cout<<"Product of given two numbers is: "<<n1*n2<<endl;
-}
-maths::div()
-{
-	cout<<"Division of given two numbers is: "<<n1/n2<<endl;
+	if(num2!=0)
+	{
+		cout<<"Result of Division of the two numbers is "<<num1/num2<<endl;
+	}
+	else
+	{
+		cout<<"Error: Division by zero not allowed."<<endl;
+	}
 }
 int main()
 {
-	int ch;
-	int c;
-	maths m;
+	data d;
+	char choice;
+	int option;
 	do
 	{
-	m.getdata();
-	cout<<"\nEnter your choice: "<<endl<<"1. Addition"<<endl<<"2. Subtraction"<<endl<<"3. Multiplication"<<endl<<"4. Division\n"<<endl;
-	cin>>ch;
-	switch(ch)
-	{
-		case 1:
-		m.add();
-		break;
-		case 2:
-		m.sub();
-		break;
-		case 3:
-		m.mul();
-		break;
-		case 4:
-		m.div();
-		break;
-		default:
-		cout<<"Invalid choice code";
-		break;		
-	}
-	cout<<"Do you want to continue(1 for yes, 0 for no):";
-	cin>>c;
-	}while(c==1);
+		d.getdata();
+		cout<<"Select the operation that you want to perform:"<<endl;
+		cout<<"1. Addition \n2. Subtraction \n3. Multiplication \n4. Division \n";
+		cin>>option;
+		switch(option)
+		{
+			case 1:
+				d.add();
+				break;
+			case 2:
+				d.subtract();
+				break;
+			case 3:
+				d.multiply();
+				break;
+			case 4:
+				d.divide();
+				break;
+			default:
+				cout<<"Invalid choice"<<endl;				
+		}
+		cout<<"Do you want to continue??{Y for yes, N for no):  ";
+		cin>>choice;
+		if(choice!='Y'&&choice!='y')
+		{
+			cout<<"Exiting Program"<<endl;
+		}
+	}while(choice=='Y'||choice=='y');
 	return 0;
 }
