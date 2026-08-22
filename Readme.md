@@ -1,6 +1,6 @@
 # 💻 College Lab Work
 
-A structured repository containing my **B.Tech Computer Science Engineering** laboratory programs, practicals, and assignments completed throughout my degree.
+A structured repository containing my **B.Tech Computer Science Engineering** laboratory programs, practicals, and assignments of technical subjects completed throughout my degree.
 
 > Organized year-wise for easy navigation and long-term academic reference.
 
