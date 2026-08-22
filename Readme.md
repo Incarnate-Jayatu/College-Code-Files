@@ -33,7 +33,7 @@ College-Lab-Work/
 │   └── C++ Programming Language/
         ├── Readme.md/
 │
-├── Year-2/
+├── Second Year/
 │   ├── Java Programming Language/
         ├── Readme.md/
 │   └── C++(DSA)/
