@@ -6,7 +6,7 @@ int main()
     printf("Enter any number: "); 
     scanf("%d", &n); 
     
- if(n<0) 
+    if(n<0) 
     { 
         printf("Error Factorial can't be calculated"); 
     } 
