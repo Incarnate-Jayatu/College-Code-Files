@@ -1,116 +1,136 @@
+package railway;
 import java.util.*;
 
 abstract class Reservation
 {
-    Integer age;
-    String pnr;
-    String passengerName;
-    Double baseFare;
-    Double finalFare;
+	Integer age;
+	String pnr, passengerName;
+	Double baseFare;
+	Double finalFare;
+ 
+	void acceptDetails(Scanner s)
+	{
+		System.out.print("Enter PNR number: ");
+		pnr = s.nextLine();
+		System.out.print("Enter Passenger Name: ");
+		passengerName = s.nextLine();
+		do
+		{
+			System.out.print("Enter Passenger Age: ");
+			age = s.nextInt();
+			if(age<=0)
+			{
+				System.out.println("Invalid Age!! \nRe-enter your age!!!");
+			}
+		}while(age<=0);
+		do
+		{
+			System.out.print("Enter Base Fare: ");
+			baseFare = s.nextDouble();
+			if(baseFare<=0)
+			{
+				System.out.println("Invalid Fare Amount!! \nRe-enter your Base Fare Amount!!!");
+			}
+		}while(baseFare<=0);
+		
+	}
 
-    void acceptDetails(Scanner scanner)
-    {
-        System.out.print("Enter PNR Number: ");
-        this.pnr = scanner.nextLine();
-        System.out.print("Enter Passenger Name: ");
-        this.passengerName = scanner.nextLine();
-        System.out.print("Enter Age: ");
-        this.age = scanner.nextInt();
-        scanner.nextLine();
-        System.out.print("Enter Base Fare: ");
-        this.baseFare = scanner.nextDouble();
-        scanner.nextLine();
-    }
+	abstract void calculateFare();
 
-    abstract void calculateFare();
-
-    void displayDetails()
-    {
-        System.out.println("\n=============RESERVATION DETAILS=============");
-        System.out.println("PNR: " + pnr);
-        System.out.println("Passenger Name: " + passengerName);
-        System.out.println("Age: " + age);
-        System.out.println("Base Fare: Rs. " + baseFare);
-        System.out.println("Final Calculated Fare: Rs. " + finalFare);
-        System.out.println("---------------------------");
-        System.out.println("---------------------------\n");
-    }
-
+	void displayDetails()
+	{
+		System.out.println("\n=========RESERVATION DETAILS=========\n");
+		System.out.println("PNR Number: "+pnr);
+		System.out.println("Passenger Name: "+passengerName);
+		System.out.println("Passenger Age: "+age);
+		System.out.println("Base Fare: "+baseFare);
+		System.out.println("Final Fare: "+finalFare);
+		System.out.println("\n==================================\n");
+	}	
 }
 
 class NormalReservation extends Reservation
 {
-    void calculateFare()
-    {
-        if(this.age<12)
-        {
-            this.finalFare = this.baseFare*0.50;
-        }
-        else if(this.age>60)
-        {
-            this.finalFare = this.baseFare*0.70;
-        }
-        else
-        {
-            this.finalFare = this.baseFare;
-        }
-    }
+	void calculateFare()
+	{
+		if(super.age<12)
+		{
+			this.finalFare = baseFare*0.5;
+			return;
+		}
+		else if(super.age>60)
+		{
+			this.finalFare = baseFare*0.7;
+			return;
+		}
+		else 
+		{
+			this.finalFare = baseFare;
+			return;
+		}
+	}
 }
 
 class AcReservation extends Reservation
 {
-    void calculateFare()
-    {
-        if(this.age<12)
-        {
-            this.finalFare = this.baseFare*0.50 + this.baseFare*0.30;
-        }
-        else if(this.age>60)
-        {
-            this.finalFare = this.baseFare*0.70 + this.baseFare*0.30;
-        }
-        else
-        {
-            this.finalFare = this.baseFare + this.baseFare*0.30;
-        }
-    }
+	void calculateFare()
+	{
+		if(super.age<12)
+		{
+			this.finalFare = baseFare*0.5 + baseFare*0.3;
+			return;
+		}
+		else if(super.age>60)
+		{
+			this.finalFare = baseFare*0.7 + baseFare*0.3;
+			return;
+		}
+		else 
+		{
+			this.finalFare = baseFare + baseFare*0.3;
+			return;
+		}
+	}
 }
 
 class TestClass
 {
-    public static void main(String []args)
-    {
-        Scanner inp = new Scanner(System.in);
-        NormalReservation nReserve = new NormalReservation();
-        AcReservation aReserve = new AcReservation();
-        int choice;
-        System.out.println("\n===============RAILWAY TICKETING SYSTEM===============");
-        do
-        {
-            System.out.println("Select Reservation Type:");
-            System.out.println("1. AC Reservation \n2. Normal Reservation \n3. Exit Program");
-            System.out.println("Enter you Choice:  ");
-            choice = inp.nextInt();
-            inp.nextLine();
-            switch(choice)
-            {
-                case 1:
-                    aReserve.acceptDetails(inp);
-                    aReserve.calculateFare();
-                    aReserve.displayDetails();
-                    break;
-                case 2:
-                    nReserve.acceptDetails(inp);
-                    nReserve.calculateFare();
-                    nReserve.displayDetails();
-                    break;
-                case 3:
-                    System.out.println("EXITING PROGRAM !!!");
-                    break;
-                default:
-                    System.out.println("Invalid Choice !!!");
-                    break;                        
-            }
-        }while(choice!=3);
-    }
+	public static void main(String []args)
+	{
+		Reservation nr = new NormalReservation();
+		Reservation ar = new AcReservation();
+		System.out.println("=========RAILWAY RESERVATION SYSTEM=========");
+		Scanner inp = new Scanner(System.in);
+		int choice;
+		do
+		{
+			System.out.println("Select Your Reservation Choice: ");
+			System.out.println("1. Normal Reservation");
+			System.out.println("2. AC Reservation");
+			System.out.println("3. Exit Reservation System");
+			System.out.println("Enter your choice: ");
+			choice = inp.nextInt();
+			inp.nextLine();
+			switch(choice)
+			{
+				case 1:
+					nr.acceptDetails(inp);
+					nr.calculateFare();
+					nr.displayDetails();
+					break;
+				case 2:
+					ar.acceptDetails(inp);
+					ar.calculateFare();
+					ar.displayDetails();
+					break;
+				case 3:
+					System.out.println("Exiting Program !!!");
+					break;
+				default:
+					System.out.println("Invalid Choice !!!");
+					break;
+			}
+		}while(choice!=3);
+		inp.close();
+	}
 }
