@@ -1,4 +1,4 @@
-class Array
+class ArrayException
 {
 	public static void main(String []args)
 	{
