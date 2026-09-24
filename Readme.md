@@ -29,14 +29,18 @@ College-Lab-Work/
 │
 ├── First Year/
 │   ├── C Programming Language/
+        ├── .c code files/
         ├── Readme.md/
 │   └── C++ Programming Language/
+        ├── .cpp code files/
         ├── Readme.md/
 │
 ├── Second Year/
 │   ├── Java Programming Language/
+        ├── .java code files/
         ├── Readme.md/
 │   └── C++(DSA)/
+        ├── .cpp code files/
         ├── Readme.md/
 │
 └── README.md
